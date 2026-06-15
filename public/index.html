@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>Inventory Manager</h1>
+      <p>Manage your purchases and stock items</p>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="form-card">
+      <h2>Add New Purchase</h2>
+
+      <div class="form-top">
+        <div class="form-group">
+          <label for="purchaseDate">Purchase Date <span class="required">*</span></label>
+          <input type="date" id="purchaseDate" />
+        </div>
+        <button class="btn-add-item" onclick="addItemRow()">+ Add Item</button>
+      </div>
+
+      <!-- Error messages -->
+      <div id="errorBox" class="error-box" style="display:none;"></div>
+      <!-- Success message -->
+      <div id="successBox" class="success-box" style="display:none;"></div>
+
+      <!-- Item rows header -->
+      <div class="items-header">
+        <span>Item Name</span>
+        <span>Item Type</span>
+        <span>In Stock</span>
+        <span></span>
+      </div>
+
+      <!-- Item rows container -->
+      <div id="itemRows">
+        <!-- rows added here -->
+      </div>
+
+      <div class="form-actions">
+        <button class="btn-submit" onclick="submitPurchase()">
+          Save Purchase
+        </button>
+      </div>
+    </div>
+
+    <!-- TABLE SECTION -->
+    <div class="table-card">
+      <div class="table-header">
+        <h2>All Purchases</h2>
+        <button class="btn-refresh" onclick="loadPurchases()">↻ Refresh</button>
+      </div>
+
+      <div id="tableContainer">
+        <p class="empty-msg">No purchases yet. Add one above.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
